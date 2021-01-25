@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Sofia Pro';
+    src: local('Sofia Pro Regular'), local('Sofia-Pro-Bold'),
+    url('./assets/fonts/SofiaProRegular.woff2') format('woff2'),
+    url('./assets/fonts/SofiaProRegular.woff') format('woff'),
+    url('./assets/fonts/SofiaProRegular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sofia Pro';
+    src: local('Sofia Pro Bold'), local('Sofia-Pro-Bold'),
+    url('./assets/fonts/SofiaProBold.woff2') format('woff2'),
+    url('./assets/fonts/SofiaProBold.woff') format('woff'),
+    url('./assets/fonts/SofiaProBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    font-family: "Sofia Pro", sans-serif;
+    margin: 0;
+}
+
+.maintenance {
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    padding-top: 48px;
+}
+
+.maintenance__logo {
+     display: block;
+     margin: 0 auto 36px;
+ }
+
+.maintenance__content {
+     max-width: 850px;
+     margin: 0 auto;
+     padding: 67px 0;
+
+     background-color: #FAFAFA;
+ }
+
+.maintenance__title {
+     margin-bottom: 34px;
+     text-align: center;
+
+     font-style: normal;
+     font-weight: bold;
+     font-size: 40px;
+     line-height: 32px;
+     color: #4AA956;
+ }
+
+
+.maintenance__description {
+     margin: 0 auto;
+     max-width: 400px;
+     text-align: center;
+
+     font-style: normal;
+     font-weight: bold;
+     font-size: 14px;
+     line-height: 32px;
+     color: black;
+ }
+
+.maintenance__footer {
+     position: fixed;
+     width: 100%;
+     bottom: 0;
+ }
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 200px;
+    width: 100%;
+}
+
+.footer__social-container {
+    display: flex;
+    width: 450px;
+    margin: 0 auto 73px;
+    justify-content: space-between;
+}
+
+.footer__social-container span:not(:last-child) {
+    margin-right: 24px;
+}
+
+.footer__social-container span img {
+    height: 54px;
+    width: 54px;
+
+    transition: transform 0.1s linear;
+}
+
+.footer__social-container span img:hover {
+    transform: scale(1.1);
+}
+
+.footer__copyright {
+    color: black;
+    text-align: center;
+    font-size: 15px;
+
+}
+
+.footer__copyright a {
+    color: #4AA956;
+}
+
+@media (max-width: 900px) {
+    .maintenance {
+        padding-top: 24px;
+    }
+
+    .maintenance__logo {
+     margin-bottom: 16px;
+    }
+
+    .maintenance__content {
+     padding: 67px 20px;
+    }
+
+    .maintenance__description {
+         max-width: unset;
+    }
+
+    .footer__social-container {
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr 1fr;
+        max-width: 300px;
+        margin: 0 auto 33px;
+        row-gap: 20px;
+        justify-items: center;
+    }
+
+    .footer__social-container span img {
+        height: 44px;
+        width: 44px;
+    }
+
+    .footer__social-container span:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .footer__copyright {
+        font-size: 12px;
+    }
+}
