@@ -23,49 +23,61 @@ body {
 }
 
 .maintenance {
-    box-sizing: border-box;
-    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
     width: 100vw;
-    background-color: white;
-    padding-top: 48px;
+    height: 100vh;
+}
+
+.maintenance::before, .maintenance::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    content: "";
+}
+.maintenance::before {
+    z-index: -2;
+    height: 100%;
+    background-color: #16182c;
+}
+.maintenance::after {
+    z-index: -1;
+    height: 80%;
+    background: url("assets/images/bg.jpeg") center no-repeat;
+    background-size: contain;
 }
 
 .maintenance__logo {
-     display: block;
-     margin: 0 auto 36px;
- }
+    display: block;
+    margin: 20px auto;
+}
 
 .maintenance__content {
-     max-width: 850px;
-     margin: 0 auto;
-     padding: 67px 0;
+    max-width: 600px;
+    margin: auto auto 120px;
+    padding: 0 30px;
+    color: white;
+}
 
-     background-color: #FAFAFA;
- }
 
 .maintenance__title {
-     margin-bottom: 34px;
-     text-align: center;
-
-     font-style: normal;
-     font-weight: bold;
-     font-size: 40px;
-     line-height: 32px;
-     color: #4AA956;
- }
-
+    margin-bottom: 30px;
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 114%;
+    text-align: center;
+}
 
 .maintenance__description {
-     margin: 0 auto;
-     max-width: 400px;
-     text-align: center;
-
-     font-style: normal;
-     font-weight: bold;
-     font-size: 14px;
-     line-height: 32px;
-     color: black;
- }
+    max-width: 350px;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
 
 .maintenance__footer {
      position: fixed;
@@ -113,21 +125,43 @@ body {
     color: #4AA956;
 }
 
+@media (max-width: 1239px) {
+    .maintenance::after {
+        background-size: cover;
+    }
+}
+
+@media (max-width: 599px) {
+    .maintenance__content {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 420px) {
+    .maintenance__content {
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+}
+
+@media (max-height: 650px) {
+    .maintenance__title {
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    }
+}
+
 @media (max-width: 900px) {
     .maintenance {
         padding-top: 24px;
     }
-
     .maintenance__logo {
-     margin-bottom: 16px;
+        margin-bottom: 16px;
     }
-
     .maintenance__content {
-     padding: 67px 20px;
+        padding: 67px 20px;
     }
-
     .maintenance__description {
-         max-width: unset;
+        max-width: unset;
     }
 
     .footer__social-container {
